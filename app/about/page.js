@@ -2,7 +2,11 @@ import Image from "next/image";
 import React from "react";
 import Team from "./components/Team";
 import CTA from "../components/CTA";
-import Services from "../components/home/Services";
+
+export const metadata = {
+  title: "About-EWP",
+  description: " E-Website Provider Private Limited (EWP PVT. LTD.)",
+};
 
 export default function About() {
   return (
