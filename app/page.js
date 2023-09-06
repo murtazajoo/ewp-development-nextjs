@@ -1,4 +1,3 @@
-"use client";
 import CTA from "./components/CTA";
 import Hero from "./components/home/Hero";
 import About from "./components/home/About";
@@ -6,7 +5,10 @@ import Services from "./components/home/Services";
 import Features from "./components/home/Features";
 import HowItWorks from "./components/home/HowItWorks";
 import Faqs from "./components/Faqs";
-
+export const metadata = {
+  title: "E-Website Provider",
+  description: " E-Website Provider Private Limited (EWP PVT. LTD.)",
+};
 export default function Home() {
   return (
     <div>

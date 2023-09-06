@@ -14,12 +14,6 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata = {
-  title: "E-Website Provider",
-
-  description: " E-Website Provider Private Limited (EWP PVT. LTD.)",
-};
-
 export default function RootLayout({ children }) {
   React.useEffect(() => {
     AOS.init({
