@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "@mui/material";
 import React, { useState } from "react";
 import { ArrowForwardIosOutlined } from "@mui/icons-material";
