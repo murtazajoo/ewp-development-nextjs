@@ -1,10 +1,11 @@
 import CTA from "./components/CTA";
 import Hero from "./components/home/Hero";
 import About from "./components/home/About";
-import Services from "./components/home/Services";
+import Services from "./components/Services";
 import Features from "./components/home/Features";
 import HowItWorks from "./components/home/HowItWorks";
 import Faqs from "./components/Faqs";
+import { fewServices } from "./lib/services";
 export const metadata = {
   title: "E-Website Provider",
   description: " E-Website Provider Private Limited (EWP PVT. LTD.)",
@@ -15,7 +16,7 @@ export default function Home() {
       <Hero />
       <main>
         <About />
-        <Services />
+        <Services services={fewServices} />
         <CTA />
         <Features />
         <HowItWorks />

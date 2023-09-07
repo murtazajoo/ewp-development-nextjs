@@ -4,7 +4,10 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <header className="flex items-center justify-center py-20 ">
-      <div className="flex flex-col-reverse sm:flex-row items-center justify-between max-w-[1300px] m-auto px-5">
+      <div
+        data-aos="zoom-in"
+        className="flex flex-col-reverse sm:flex-row items-center justify-between max-w-[1300px] m-auto px-5"
+      >
         <div className="flex flex-col items-start justify-start sm:w-1/2 ">
           <h1 className="text-6xl font-bold leading-tight text-gray-800 uppercase break-words">
             E-Website <br />

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Team from "./components/Team";
 import CTA from "../components/CTA";
+import Testimonials from "../components/Testimonials";
 
 export const metadata = {
   title: "About-EWP",
@@ -11,7 +12,7 @@ export const metadata = {
 export default function About() {
   return (
     <main>
-      <div className="px-5 mt-10 text-center">
+      <div data-aos="zoom-out" className="px-5 mt-10 text-center">
         <h1 className="text-3xl font-bold text-gray-800">About Us</h1>
         <p className="font-semibold text-gray-600">
           Your All-in-One Destination for Web Services, App Development, and
@@ -19,7 +20,10 @@ export default function About() {
         </p>
       </div>
 
-      <div className="flex  px-5 flex-col-reverse sm:flex-row items-center justify-between leading-relaxed text-gray-800 my-10 max-w-[1200px] m-auto">
+      <div
+        data-aos="zoom-in"
+        className="flex  px-5 flex-col-reverse sm:flex-row items-center justify-between leading-relaxed text-gray-800 my-10 max-w-[1200px] m-auto"
+      >
         <div className="sm:w-1/2">
           <p>
             {" "}
@@ -78,6 +82,7 @@ export default function About() {
       </div>
       <CTA variant="light" />
       <Team />
+      <Testimonials />
       <CTA />
     </main>
   );
