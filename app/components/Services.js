@@ -80,7 +80,7 @@ const Service = ({ name, description, allServices }) => {
         href={`services/${name.split(" ").join("-").toLowerCase()}`}
         className="px-4 py-2 mt-4 text-sm font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
       >
-        Learn More&nbsp; &rarr;
+        Request Details&nbsp; &rarr;
       </Link>
     </div>
   );
