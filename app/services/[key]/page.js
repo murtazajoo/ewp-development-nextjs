@@ -1,24 +1,32 @@
 "use client";
 import {
+  Autocomplete,
+  Button,
   FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
   TextField,
   TextareaAutosize,
+  Typography,
 } from "@mui/material";
-import Link from "next/link";
 import { useParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import allServices from "../../lib/services";
 
 export default function Page() {
   const { key } = useParams();
   const [name, setName] = useState();
+  const services = useMemo(
+    () =>
+      allServices.map((service) => {
+        return {
+          label: service.service,
+        };
+      }),
+    []
+  );
   return (
-    <section className="py-20 ">
-      <div className="max-w-[1200px] mx-auto  ">
-        <div className="flex">
+    <section className="py-20 bg-pattern-light ">
+      <div className="max-w-[1200px] mx-auto bg-white p-5 rounded-3xl bg-opacity-30 backdrop-blur-sm shadow">
+        <div className="flex flex-col items-center justify-center md:items-start md:flex-row">
           <div className="w-1/3">
             <h3 className="text-3xl font-bold">Service Order</h3>
           </div>
@@ -59,7 +67,7 @@ export default function Page() {
             <TextField
               fullWidth
               data-aos="zoom-out"
-              label="Company"
+              label="Company (optional)"
               value={name}
               onChange={(e) => setName(e.target.value)}
               margin="normal"
@@ -67,43 +75,45 @@ export default function Page() {
             <TextField
               fullWidth
               data-aos="zoom-out"
-              label="Budget"
+              label="Budget (optional)"
               value={name}
               onChange={(e) => setName(e.target.value)}
               margin="normal"
-              required
               helperText="In Rupees"
             />
 
-            <FormControl fullWidth className="mt-3">
-              <InputLabel id="demo-simple-select-label">
-                Type Of Service{" "}
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={key}
-                label="Service"
-                onChange={() => {}}
-                defaultValue={key}
+            <Autocomplete
+              disablePortal
+              id="combo-box-demo"
+              className="mt-4 capitalize"
+              options={services}
+              defaultValue={key.split("-").join(" ")}
+              renderInput={(params) => (
+                <TextField {...params} label="Type of Service " />
+              )}
+            />
+
+            <FormControl fullWidth className="mt-5 ">
+              <Typography
+                variant="body2"
+                className="px-1 text-gray-400 capitalize"
               >
-                <MenuItem value={key}>{key}</MenuItem>
-
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormControl fullWidth className="mt-3">
+                Additional Message
+              </Typography>
               <TextareaAutosize
-                labelId="demo-simple-textarea-label"
-                className="w-full p-2 my-5 border-2 rounded-md outline-blue-600"
-                placeholder="Additional Message"
+                className="w-full p-2 bg-transparent border-2 rounded-md outline-blue-600"
+                placeholder="I also want ....."
                 minRows={4}
                 variant="outlined"
                 helperText="sdsdada"
               />
             </FormControl>
+
+            <div className="flex justify-end mt-5">
+              <Button variant="outlined" size="large" href="/contact">
+                Submit
+              </Button>
+            </div>
           </div>
         </div>
       </div>{" "}
